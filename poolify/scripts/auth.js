@@ -1,19 +1,51 @@
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+// SIGN UP handler
+document.addEventListener("DOMContentLoaded", () => {
+  const signupForm = document.getElementById("signupForm");
+  if (signupForm) {
+    signupForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-  // Simulated user check
-  const dummyUser = {
-    email: "prat@msrit.edu",
-    password: "pass123",
-  };
+      if (password !== confirmPassword) {
+        document.getElementById("signupMessage").textContent = "Passwords do not match!";
+        return;
+      }
 
-  if (email === dummyUser.email && password === dummyUser.password) {
-    localStorage.setItem("user", JSON.stringify(dummyUser));
-    window.location.href = "dashboard.html"; // next page we’ll build
-  } else {
-    document.getElementById("loginMessage").textContent = "Invalid credentials";
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+
+      if (users[email]) {
+        document.getElementById("signupMessage").textContent = "User already exists!";
+        return;
+      }
+
+      users[email] = { name, email, password };
+      localStorage.setItem("users", JSON.stringify(users));
+
+      window.location.href = "login.html";
+    });
+  }
+
+  // LOGIN fallback (already added earlier)
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+
+      if (users[email] && users[email].password === password) {
+        localStorage.setItem("user", JSON.stringify(users[email]));
+        window.location.href = "dashboard.html"; // placeholder
+      } else {
+        document.getElementById("loginMessage").textContent = "Invalid credentials";
+      }
+    });
   }
 });
