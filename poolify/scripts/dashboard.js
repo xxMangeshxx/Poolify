@@ -1,62 +1,53 @@
+// auth.js
+
 document.addEventListener("DOMContentLoaded", () => {
-  const user = JSON.parse(localStorage.getItem("currentUser"));
-  if (!user) {
-    window.location.href = "login.html";
-    return;
+  // SIGN UP Handler
+  const signupForm = document.getElementById("signupForm");
+  if (signupForm) {
+    signupForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+      if (password !== confirmPassword) {
+        document.getElementById("signupMessage").textContent = "Passwords do not match!";
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+
+      if (users[email]) {
+        document.getElementById("signupMessage").textContent = "User already exists!";
+        return;
+      }
+
+      users[email] = { name, email, password };
+      localStorage.setItem("users", JSON.stringify(users));
+
+      window.location.href = "login.html";
+    });
   }
 
-  document.getElementById("username-display").textContent = `Hi, ${user.username}`;
+  // LOGIN Handler
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-  // Logout
-  document.getElementById("logout-btn").addEventListener("click", () => {
-    localStorage.removeItem("currentUser");
-    window.location.href = "login.html";
-  });
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-  // Tab Switching
-  const viewTab = document.getElementById("view-tab");
-  const postTab = document.getElementById("post-tab");
-  const viewSection = document.getElementById("view-rides-section");
-  const postSection = document.getElementById("post-ride-section");
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
 
-  viewTab.addEventListener("click", () => {
-    viewTab.classList.add("active");
-    postTab.classList.remove("active");
-    viewSection.style.display = "block";
-    postSection.style.display = "none";
-  });
-
-  postTab.addEventListener("click", () => {
-    postTab.classList.add("active");
-    viewTab.classList.remove("active");
-    postSection.style.display = "block";
-    viewSection.style.display = "none";
-  });
-
-  // Load Rides (Stub for now)
-  loadRides();
-
-  function loadRides() {
-    const dummyRides = JSON.parse(localStorage.getItem("rides") || "[]");
-    const rideContainer = document.getElementById("rides-list");
-    rideContainer.innerHTML = "";
-
-    if (dummyRides.length === 0) {
-      rideContainer.innerHTML = "<p>No rides available.</p>";
-      return;
-    }
-
-    dummyRides.forEach(ride => {
-      const div = document.createElement("div");
-      div.className = "ride";
-      div.innerHTML = `
-        <h3>${ride.from} → ${ride.to}</h3>
-        <p><strong>Date:</strong> ${ride.date} at ${ride.time}</p>
-        <p><strong>Seats:</strong> ${ride.seats}</p>
-        <p><strong>Driver:</strong> ${ride.driver}</p>
-        ${ride.note ? `<p><em>${ride.note}</em></p>` : ""}
-      `;
-      rideContainer.appendChild(div);
+      if (users[email] && users[email].password === password) {
+        localStorage.setItem("currentUser", JSON.stringify(users[email]));
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("loginMessage").textContent = "Invalid credentials";
+      }
     });
   }
 });
