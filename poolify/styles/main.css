@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f8f9fa;
+  text-align: center;
+  color: #333;
+}
+
+.hero {
+  padding-top: 100px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-buttons .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px;
+  background: #0077ff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background: #6c757d;
+}
