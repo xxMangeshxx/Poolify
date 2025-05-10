@@ -40,3 +40,47 @@ p {
 .btn-secondary {
   background: #6c757d;
 }
+
+.auth-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 100px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background: #0077ff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background: #005fe0;
+}
+
+.auth-container .msg {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
