@@ -1,0 +1,56 @@
+🧱 Pages (you can make them standalone HTML files or use a SPA framework like React later):
+
+Home Page (index.html)
+Simple landing with intro to Poolify
+Call-to-actions: “Login” or “Sign up”
+Maybe a carousel or quote about carpooling
+
+Login Page (login.html)
+Basic username/password form
+(For demo, mock login – no real auth needed)
+
+Sign Up Page (signup.html)
+Name, email, password form
+Store to localStorage or mock behavior
+
+Dashboard / Ads Feed (dashboard.html)
+Shows list of ride posts (fake data is fine)
+
+"Filter by route", "Post a Ride", etc.
+Clicking a ride can open a modal with details
+
+Post a Ride (post.html)
+Form to post new ride (from, to, date, time, seats)
+On submit, store to localStorage or just fake an alert
+
+My Rides (myrides.html)
+List of user’s posted rides (mocked)
+
+Chat Page (chat.html) (Optional, fake UI only)
+Show a fake one-on-one chat UI after request is accepted
+
+🔁 Basic Workflow
+Home Page
+👉 Redirect to login/sign up
+
+Login
+✅ On success, redirect to dashboard
+
+Dashboard
+🔍 View available ride ads (cards or list)
+➕ Button to post a ride
+👤 Link to view own rides
+
+Post Ride
+📝 Fill form, store in localStorage or alert “Ride Posted!”
+
+My Rides
+📄 Show user's posted rides (again, mock data is fine)
+
+🔧 Tech Stack (for demo-friendly setup)
+HTML/CSS (Bootstrap/Tailwind for UI polish)
+JavaScript (vanilla or with something like Alpine.js)
+Use localStorage to simulate data persistence
+GitHub + GitHub Actions for CI/CD
+Deploy on Netlify or Vercel (auto-deploy on push)
+
