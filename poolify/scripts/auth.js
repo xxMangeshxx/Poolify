@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       users[email] = { name, email, password };
-      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("currentUser", JSON.stringify(users[email]));
 
       window.location.href = "login.html";
     });
