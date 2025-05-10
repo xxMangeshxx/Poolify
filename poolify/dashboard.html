@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Poolify | Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Poolify</title>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <h1>Poolify 🛻</h1>
-    <div class="user-info">
-      <span id="username-display"></span>
-      <button id="logout-btn">Logout</button>
-    </div>
-  </nav>
 
-  <main>
+  <div class="navbar">
+    <a href="index.html">Poolify 🛻</a>
+    <a href="index.html" id="logout-btn">Logout</a>
+  </div>
+
+  <div class="dashboard-container">
+    <h2 id="username-display">Hi, User</h2>
+
     <div class="tabs">
       <button id="view-tab" class="active">View Rides</button>
       <button id="post-tab">Post a Ride</button>
     </div>
 
-    <section id="view-rides-section">
-      <h2>Available Rides</h2>
-      <div id="rides-list"></div>
-    </section>
+    <div id="view-rides-section" style="display: block;">
+      <h3>Available Rides</h3>
+      <div id="rides-list">
+        <!-- Rides will be populated here -->
+      </div>
+    </div>
 
-    <section id="post-ride-section" style="display: none;">
-      <h2>Post a Ride</h2>
-      <form id="post-ride-form">
-        <input type="text" placeholder="From" id="from" required>
-        <input type="text" placeholder="To" id="to" required>
-        <input type="date" id="date" required>
-        <input type="time" id="time" required>
-        <input type="number" placeholder="Seats Available" id="seats" min="1" max="6" required>
-        <textarea placeholder="Notes (optional)" id="note"></textarea>
-        <button type="submit">Post Ride</button>
-      </form>
-    </section>
-  </main>
+    <div id="post-ride-section" style="display: none;">
+      <h3>Post a Ride</h3>
+      <!-- Add the form or input fields to post a ride -->
+    </div>
+  </div>
 
   <script src="dashboard.js"></script>
 </body>
