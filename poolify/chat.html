@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ride Chat</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="ride-info">
+      <h3>Ride from <span id="ride-from"></span> to <span id="ride-to"></span></h3>
+      <p><strong>Date:</strong> <span id="ride-date"></span> <span id="ride-time"></span></p>
+      <p><strong>Driver:</strong> <span id="ride-driver"></span></p>
+    </div>
+    
+    <div class="chat-box" id="chat-box">
+      <div class="chat-message">
+        <span class="sender">Driver:</span>
+        <span class="message">Hi, I will be waiting at the pickup point. Let me know if you need any help!</span>
+      </div>
+    </div>
+    
+    <div class="message-input">
+      <input type="text" id="message" placeholder="Type your message..." />
+      <button id="send-message-btn">Send</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentRide = JSON.parse(localStorage.getItem("currentRide"));
+      
+      if (currentRide) {
+        document.getElementById("ride-from").textContent = currentRide.from;
+        document.getElementById("ride-to").textContent = currentRide.to;
+        document.getElementById("ride-date").textContent = currentRide.date;
+        document.getElementById("ride-time").textContent = currentRide.time;
+        document.getElementById("ride-driver").textContent = currentRide.driver;
+      } else {
+        alert("No ride details found.");
+      }
+
+      // Send message functionality
+      document.getElementById("send-message-btn").addEventListener("click", () => {
+        const message = document.getElementById("message").value.trim();
+        
+        if (message) {
+          const chatBox = document.getElementById("chat-box");
+          const newMessage = document.createElement("div");
+          newMessage.classList.add("chat-message");
+          newMessage.innerHTML = `<span class="sender">You:</span> <span class="message">${message}</span>`;
+          chatBox.appendChild(newMessage);
+          document.getElementById("message").value = "";  // Clear input field
+        }
+      });
+    });
+  </script>
+</body>
+</html>
