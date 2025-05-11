@@ -2,38 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard | Poolify</title>
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-
   <div class="navbar">
     <a href="index.html">Poolify 🛻</a>
-    <a href="index.html" id="logout-btn">Logout</a>
+    <span id="username-display"></span>
+    <a href="#" id="logout-btn">Logout</a>
   </div>
 
   <div class="dashboard-container">
-    <h2 id="username-display">Hi, User</h2>
-
-    <div class="tabs">
-      <button id="view-tab" class="active">View Rides</button>
+    <div class="dashboard-menu">
+      <button id="view-tab">View Rides</button>
       <button id="post-tab">Post a Ride</button>
     </div>
 
-    <div id="view-rides-section" style="display: block;">
-      <h3>Available Rides</h3>
-      <div id="rides-list">
-        <!-- Rides will be populated here -->
-      </div>
+    <div id="view-rides-section">
+      <h2>Available Rides</h2>
+      <div id="rides-list"></div>
     </div>
 
-    <div id="post-ride-section" style="display: none;">
-      <h3>Post a Ride</h3>
-      <!-- Add the form or input fields to post a ride -->
+    <div id="post-ride-section" style="display: none">
+      <h2>Post a Ride</h2>
+      <form id="postRideForm">
+        <input type="text" id="from" placeholder="From" required />
+        <input type="text" id="to" placeholder="To" required />
+        <input type="date" id="date" required />
+        <input type="time" id="time" required />
+        <input type="number" id="seats" placeholder="Seats" min="1" required />
+        <input type="text" id="note" placeholder="Note (optional)" />
+        <button type="submit">Post Ride</button>
+      </form>
     </div>
   </div>
 
-  <script src="dashboard.js"></script>
+  <script src="scripts/dashboard.js"></script>
 </body>
 </html>
