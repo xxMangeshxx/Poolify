@@ -59,6 +59,11 @@ function loadRides() {
       const rideIndex = e.target.dataset.index;
       const ride = rides[rideIndex];
       alert(`Joined ride from ${ride.from} to ${ride.to} with ${ride.driver}`);
+              // Store the selected ride details in localStorage
+      localStorage.setItem("currentRide", JSON.stringify(ride));
+
+        // Redirect to the chat page
+      window.location.href = "chat.html";
     });
   });
 }
