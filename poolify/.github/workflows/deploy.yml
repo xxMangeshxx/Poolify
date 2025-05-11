@@ -16,4 +16,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # root of your static site (change if needed)
+          publish_dir: ./poolify
