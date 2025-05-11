@@ -1,4 +1,4 @@
-//Paste the below code into the browser console to provide persistent ride storage (CTRL+Shift+I)
+//Paste the below json into the browser console to provide persistent ride storage (CTRL+Shift+I)
 
 localStorage.setItem("rides", JSON.stringify([
   {
