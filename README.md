@@ -2,6 +2,8 @@
 
 **Tired of solo commutes? Poolify connects Riders & Drivers on campus!**
 
+**🚀 [Click here to try!](https://26pratyush.github.io/Poolify/)**
+
 ## 🔑 **Core Features (MVP)**
 
 ### 👤 **User Authentication**
