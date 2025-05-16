@@ -1,0 +1,339 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f8f9fa;
+  text-align: center;
+  color: #333;
+}
+
+.hero {
+  padding-top: 100px;
+}
+
+.logo {
+  width: 300px;
+  height: auto;
+  margin-bottom: 1px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-buttons .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px;
+  background: #0077ff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background: #6c757d;
+}
+
+/* Auth Container */
+.auth-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 100px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background: #0077ff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background: #005fe0;
+}
+
+.auth-container .msg {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background: #0077ff;
+  color: white;
+  cursor: pointer;
+}
+
+.tabs button:hover {
+  background: #005fe0;
+}
+
+.tabs button.active {
+  background: #005fe0;
+}
+
+#view-rides-section,
+#post-ride-section {
+  display: none;
+}
+
+#view-rides-section.active,
+#post-ride-section.active {
+  display: block;
+}
+
+.ride-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ride-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.ride-card p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.ride-card .btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ride-card .btn:hover {
+  background-color: #218838;
+}
+
+.ride-card .seats-left {
+  font-weight: bold;
+}
+
+.card-footer {
+  text-align: right;
+}
+
+.card-footer .btn {
+  background-color: #0077ff;
+}
+
+.card-footer .btn:hover {
+  background-color: #005fe0;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  margin: 0 15px;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+}
+
+.dashboard-menu {
+  margin-bottom: 20px;
+}
+
+.dashboard-menu button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background: #0077ff;
+  color: white;
+  cursor: pointer;
+}
+
+.dashboard-menu button:hover {
+  background: #005fe0;
+}
+
+/* Post a Ride Form */
+#post-ride-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#post-ride-section input,
+#post-ride-section textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#post-ride-section button {
+  padding: 12px;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#post-ride-section button:hover {
+  background-color: #005fe0;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.clickable:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+.join-ride-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.join-ride-btn:hover {
+  background-color: #218838;
+}
+
+/* Chat Page Styles */
+.chat-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ride-info {
+  margin-bottom: 20px;
+}
+
+.chat-box {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+}
+
+.chat-message .sender {
+  font-weight: bold;
+}
+
+.chat-message .message {
+  margin-left: 10px;
+}
+
+.message-input {
+  display: flex;
+  gap: 10px;
+}
+
+.message-input input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.message-input button {
+  padding: 10px;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message-input button:hover {
+  background-color: #005fe0;
+}

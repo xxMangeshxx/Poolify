@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Poolify</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Poolify 🛻</a>
+    <span id="username-display"></span>
+    <a href="#" id="logout-btn">Logout</a>
+  </div>
+
+  <div class="dashboard-container">
+    <div class="dashboard-menu">
+      <button id="view-tab">View Rides</button>
+      <button id="post-tab">Post a Ride</button>
+    </div>
+
+    <div id="view-rides-section">
+      <h2>Available Rides</h2>
+      <div id="rides-list"></div>
+    </div>
+
+    <div id="post-ride-section" style="display: none">
+      <h2>Post a Ride</h2>
+      <form id="postRideForm">
+        <input type="text" id="from" placeholder="From" required />
+        <input type="text" id="to" placeholder="To" required />
+        <input type="date" id="date" required />
+        <input type="time" id="time" required />
+        <input type="number" id="seats" placeholder="Seats" min="1" required />
+        <input type="text" id="note" placeholder="Note (optional)" />
+        <button type="submit">Post Ride</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts/dashboard.js"></script>
+</body>
+</html>

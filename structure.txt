@@ -1,0 +1,30 @@
+poolify/
+│
+├── index.html               # Home page
+├── login.html               # Login page
+├── signup.html              # Sign-up page
+├── dashboard.html           # View all ads
+├── post.html                # Post a new ride
+├── myrides.html             # User's posted rides
+├── chat.html                # (Optional) Chat UI
+│
+├── /assets/
+│   ├── /css/
+│   │   └── styles.css       # Custom styles (or use Tailwind/Bootstrap)
+│   └── /js/
+│       ├── main.js          # Core logic, routing, localStorage, etc.
+│       └── auth.js          # Login/signup logic (mocked)
+│
+├── /data/
+│   └── rides.json           # Mock ride data (for local testing only)
+│
+├── /images/                 # Logos, backgrounds, etc.
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml           # GitHub Actions workflow for CI/CD
+│
+├── .gitignore
+├── README.md
+├── LICENSE
+└── package.json             # Optional if using build tools or JS libs

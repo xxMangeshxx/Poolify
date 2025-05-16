@@ -1,0 +1,23 @@
+//Paste the below json into the browser console to provide persistent ride storage (CTRL+Shift+I)
+
+localStorage.setItem("rides", JSON.stringify([
+  {
+    from: "Elements Mall",
+    to: "MSRIT Gate 10",
+    date: "2025-05-09",
+    time: "08:30",
+    seats: 1,
+    driver: "Pratyush",
+    note: "Bring Helmet"
+  },
+  {
+    from: "Ramaiah Main gate",
+    to: "RT Nagar",
+    date: "2025-05-10",
+    time: "03:00",
+    seats: 3,
+    driver: "Mangesh",
+    note: "I got bad taste in music, beware"
+  }
+]));
+
