@@ -1,0 +1,10 @@
+{
+  "name": "poolify",
+  "version": "1.0.0",
+  "description": "College ride-sharing platform",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "author": "Mangesh",
+  "license": "MIT"
+}
