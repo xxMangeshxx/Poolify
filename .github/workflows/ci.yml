@@ -1,0 +1,53 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - '**.js'
+      - '**.json'
+      - '**.html'
+      - '**.css'
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:  # Allows manual run from GitHub UI
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Adjust to match your project
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run ESLint (optional but recommended)
+      run: |
+        if [ -f .eslintrc.js ] || [ -f .eslintrc.json ]; then
+          npx eslint .
+        else
+          echo "No ESLint config found, skipping linting"
+        fi
+
+    - name: Run tests
+      run: |
+        if [ -f package.json ] && grep -q '"test"' package.json; then
+          npm test
+        else
+          echo "No test script found, skipping tests"
+        fi
+
+    - name: Archive test results (optional)
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: ./test-results
+        if-no-files-found: ignore
